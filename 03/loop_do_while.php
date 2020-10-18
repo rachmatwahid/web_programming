@@ -1,6 +1,5 @@
 <?php 
 
-
 // WHILE 
 // Cek kondisi dulu, baru eksekusi perulangan
 $i = 1;

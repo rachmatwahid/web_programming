@@ -1,5 +1,11 @@
 <?php 
 
+/*
+	PERULANGAN FOR
+	==============
+	Mengeksekusi berulang-ulang hingga ekspresi ke-III di dalam () bernilai FALSE
+*/
+
 $angka = 4;
 $teks = 'Pisang';
 
