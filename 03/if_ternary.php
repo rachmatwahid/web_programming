@@ -1,19 +1,36 @@
 <?php 
 
-$status = true;
+/*
+	KONDISI IF
+	==========
+	Mengeksekusi kode di dalam {} apabila kondisi di dalam () bernilai TRUE
+*/
+
+
+$usia = 65;
 
 // IF
 
-if ($status == true) {
-	$teks = 'true';
+// Nilai dari $panggilan, tergantung dari $usia
+if ($usia < 20) {
+	$panggilan = 'abang';
 } else {
-	$teks = 'false';
+	$panggilan = 'bapak';
 }
-echo $teks;
 
-// TERNARY IF
+echo $panggilan;
 
-$status2 = ($status == false) ? 'true' : 'false';
-echo $status2;
+/*
+	TERNARY IF
+	==========
+	Bentuk lain dari IF-ELSE
+*/
+
+$warna_favorit = 'pink';
+
+// Nilai dari variabel $gender, tergantung dari $warna_favorit
+$gender = ($warna_favorit != 'pink') ? 'pria' : 'wanita';
+
+echo $gender;
 
  ?>
