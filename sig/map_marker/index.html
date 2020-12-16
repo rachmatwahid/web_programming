@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Map</title>
 
+    <title>Map with Marker</title>
+    
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
     crossorigin=""/>
-
+    
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
     crossorigin=""></script>
@@ -17,7 +18,7 @@
         #mapid { 
             height: 500px;
             width: 500px; 
-            }
+        }
     </style>
     
 </head>
@@ -26,7 +27,29 @@
     <div id="mapid"></div>
     
     <script>
-        var mymap = L.map('mapid').setView([-0.02295943,109.344725], 13);        
+
+        // 1. Mempersiapkan data lokasi tugu seperti nama dan koordinat
+        
+        var monuments = [
+        ["Tugu Digulist", -0.055489701367785166, 109.3493899167155],
+        ["Tugu Khatulistiwa", 0.001387378567112165, 109.32227302528497],
+        ["Tugu Pancasila", -0.0340699656532891, 109.33829854232991]
+        ];
+
+        // 2. Mempersiapkan data peta, yakni coordinates dan zoom level 
+        
+        var mymap = L.map('mapid').setView([-0.02295943,109.344725], 13);
+
+        // 3. Mengatur Multiple Marker berdasarkan data lokasi tugu
+        
+        for (var i = 0; i < monuments.length; i++) {
+            marker = new L.marker([monuments[i][1], monuments[i][2]])
+            .bindPopup(monuments[i][0])
+            .addTo(mymap);
+        }
+
+        // 4. Menampilkan peta
+
         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
             maxZoom: 18,
@@ -35,6 +58,9 @@
             zoomOffset: -1,
             accessToken: 'pk.eyJ1IjoicmFjaG1hdHdhaGlkIiwiYSI6ImNraGRmdjI5MTA1Z3kyem4wYmdkdW05MnkifQ.DxmtwQ7DI6oDrEVHACcGGg'
         }).addTo(mymap);
+        
+
+        
     </script>
     
 </body>

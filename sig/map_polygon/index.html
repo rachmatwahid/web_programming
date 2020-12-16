@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Map with Polygon</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+    
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+    
+    <style>
+        #mapid { 
+            height: 500px;
+            width: 500px; 
+        }
+    </style>
+    
+</head>
+<body>
+    
+    <div id="mapid"></div>
+    
+    <script>
+        
+        // 1 Mempersiapkan data mall
+
+        // Nama mall
+        var mall = [
+            "Transmart",
+            "AYANI Mega Mall"
+        ];
+
+        // Lokasi mall
+        var latlang = [
+        [
+        [-0.07670077745537130, 109.36662029289995],
+        [-0.07617128739746004, 109.36779410314094],
+        [-0.07580766169127814, 109.36764737686082],
+        [-0.07514420425459047, 109.36801738226286],
+        [-0.07609473461746835, 109.36995672092189],
+        [-0.07746630523835508, 109.36940809222230],
+        [-0.07790010430924156, 109.36890411934709],
+        [-0.07790010430924156, 109.36890411934709],
+        [-0.07822545360947394, 109.36774944731656],
+        [-0.07786182792081055, 109.36700943651246]
+        ],
+        
+        [
+        [-0.05169828121869710, 109.34418834272292],
+        [-0.05076452119266379, 109.34528449615247],
+        [-0.05158099735143918, 109.34597466683036],
+        [-0.05158099735143918, 109.34597466683036],
+        [-0.05237491891015405, 109.34497775362898]
+        ]];
+
+        // 2 Menampilkan peta
+        
+        var mymap = L.map('mapid').setView([-0.06058828890543583, 109.3545850847273], 14);        
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            maxZoom: 18,
+            id: 'mapbox/streets-v11',
+            tileSize: 512,
+            zoomOffset: -1,
+            accessToken: 'pk.eyJ1IjoicmFjaG1hdHdhaGlkIiwiYSI6ImNraGRmdjI5MTA1Z3kyem4wYmdkdW05MnkifQ.DxmtwQ7DI6oDrEVHACcGGg'
+        }).addTo(mymap);
+        
+        // 3 Menampilkan polygon
+        for (let i = 0; i < latlang.length; i++) {
+            L.polygon(latlang[i], {color: 'red'})
+            .bindPopup(mall[i])
+            .addTo(mymap);
+        }
+    </script>
+    
+</body>
+</html>
