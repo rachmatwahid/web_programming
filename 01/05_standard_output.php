@@ -1,16 +1,18 @@
 <?php 
-$nama = 'Adi';
- ?>
 
- <!DOCTYPE html>
- <html>
- <head>
- 	<title>Standard Output</title>
- </head>
- <body>
- 	<!-- Gunakan function echo, print, atau var_dump -->
- 	<p><?php echo $nama; ?></p>
- 	<p><?php print($nama); ?></p>
- 	<p><?php var_dump($nama); ?></p>
- </body>
- </html>
+$text = 'Hello World!';
+
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Standard Output</title>
+</head>
+<body>
+	<!-- Menampilkan output menggunakan function echo, print, dan var_dump -->
+	<p><?php echo $text; ?></p>
+	<p><?php print($text); ?></p>
+ 	<p><?php var_dump($text); ?></p>
+</body>
+</html>

@@ -1,18 +1,20 @@
 <?php 
-	// Mendeklarasikan variabel
-	$nama = "Adi";
-	$umur = 23;
+
+// Mendeklarasikan variabel
+$name = "Adi";
+$age = 23;
+
  ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Tipe Data</title>
+	<title>Profile</title>
 </head>
 <body>
 	<!-- Menampilkan value dari variabel -->
-	<h1>Biodata <?php echo $nama; ?></h1>
-	<p>Usia <?php echo $umur; ?></p>
+	<h1>Name: <?php echo $name; ?></h1>
+	<p>Age: <?php echo $age; ?></p>
 
 </body>
 </html>

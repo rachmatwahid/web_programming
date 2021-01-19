@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title><?php echo "Beranda"; ?></title>
+	<!-- Mengeksekusi PHP di dalam tag HTML -->
+	<title><?php echo "Home"; ?></title>
 </head>
 <body>
-	<h1>Selamat Datang</h1>
-	<?php echo "<p>Anda adalah pengunjung <strong>pertama!</strong></p>"; ?>
-	<?php // Tuliskan kalimat sapa lain ?>
+	<h1>Home</h1>
+
+	<!-- Mengeksekusi tag <p> HTML di dalam perintah echo PHP -->
+	<?php echo "<p>You are viewing dashboard!</p>"; ?>
+	
 </body>
 </html>
