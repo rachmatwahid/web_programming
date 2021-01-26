@@ -7,11 +7,11 @@
 	di dalam {} berulang-ulang hingga kondisi () bernilai FALSE
 */
 
-$i = 0;
+$angka = 0;
 
-while ($i == 1) {
-	echo $i;
-	$i++;
+while ($angka <= 3) {
+	echo $angka;
+	$angka++;
 }
 
  ?>
